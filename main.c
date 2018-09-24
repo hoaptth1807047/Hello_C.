@@ -30,7 +30,3 @@ int main() {
 }
 
 
-//void matchHoVaTen(char ho[], char ten[]) {
-//    strcat(ho, " ");
-//    strcat(ho, ten);
-//
