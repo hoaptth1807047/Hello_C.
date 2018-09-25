@@ -11,7 +11,7 @@ void noiHoVaTen(char ho[], char ten[]) {
     printf("Độ dài của cả họ và tên là: %d\n", tong);
     tong++;
     char hoVaTen[tong];
-    strcat(hoVaTen, ho);
+    strcpy(hoVaTen, ho);
     strcat(hoVaTen, " ");
     strcat(hoVaTen, ten);
     printf("Họ và tên của bạn là: ");
@@ -20,53 +20,15 @@ void noiHoVaTen(char ho[], char ten[]) {
 
 int main() {
     char ho[10], ten[10];
-
-    while (1 == 1) {
-//    Kiểm tra độ dài họ.
-        printf("Vui lòng nhập họ của bạn: ");
-        gets(ho);
-        if (strlen(ho) > 10) {
-            printf("Lỗi. Bạn đã nhập quá số lượng. Vui lòng nhập lại.\n");
-        } else
-            break;
+    printf("Vui lòng nhập họ của bạn: ");
+    fgets(ho, 10, stdin);
+    puts(ho);
+    if(!strchr(ho, '\n')) {
+        while (fgetc(stdin) != '\n');
     }
-    while (1 == 1) {
-//    Kiểm tra độ dài tên.
         printf("Vui lòng nhập tên của bạn: ");
-        gets(ten);
-        if (strlen(ten) > 10) {
-            printf("Lỗi. Bạn đã nhập quá số lượng. Vui lòng nhập lại.");
-        } else
-            break;
-    }
+        fgets(ten, 10, stdin);
+        puts(ten);
     noiHoVaTen(ho, ten);
     return 0;
 }
-
-//void noiHoVaTen(char ho[], char ten[]) {
-//    printf("Độ dài của họ là: %d\n", strlen(ho));
-//    printf("Độ dài của tên là: %d\n", strlen(ten));
-//    int dodaiHo = strlen(ho);
-//    int dodaTen = strlen(ten);
-//    int tong = dodaiHo + dodaTen;
-//    printf("Độ dài của cả họ và tên là: %d\n", tong);
-//    tong++;
-//    char hovaten[tong];
-//    strcat(hovaten, ho);
-//    strcat(hovaten, " ");
-//    strcat(hovaten, ten);
-//    printf("%s", hovaten);
-//}
-//
-//int main() {
-//    char ho[50], ten[50];
-//    printf("Vui lòng nhập họ của bạn: \n");
-//    gets(ho);
-//    //Kiểm tra độ dài họ.
-//    printf("Vui lòng nhập tên của bạn: \n");
-//    gets(ten);
-//    //Kiểm tra độ dài tên.
-//    printf("Họ và tên của bạn là: \n");
-//    noiHoVaTen(ho, ten);
-//    return 0;
-//}
